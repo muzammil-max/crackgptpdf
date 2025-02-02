@@ -21,12 +21,11 @@ import { Link } from "@/components/ui/link";
 import NextLink from "next/link";
 import { generateQuizTitle } from "./actions";
 import { AnimatePresence, motion } from "framer-motion";
-import { VercelIcon, GitIcon } from "@/components/icons";
 
 export default function ChatWithFiles() {
   const [files, setFiles] = useState<File[]>([]);
   const [questions, setQuestions] = useState<z.infer<typeof questionsSchema>>(
-    [],
+    []
   );
   const [isDragging, setIsDragging] = useState(false);
   const [title, setTitle] = useState<string>();
@@ -53,19 +52,19 @@ export default function ChatWithFiles() {
 
     if (isSafari && isDragging) {
       toast.error(
-        "Safari does not support drag & drop. Please use the file picker.",
+        "Safari does not support drag & drop. Please use the file picker."
       );
       return;
     }
 
     const selectedFiles = Array.from(e.target.files || []);
     const validFiles = selectedFiles.filter(
-      (file) => file.type === "application/pdf" && file.size <= 5 * 1024 * 1024,
+      (file) => file.type === "application/pdf" && file.size <= 50 * 1024 * 1024
     );
     console.log(validFiles);
 
     if (validFiles.length !== selectedFiles.length) {
-      toast.error("Only PDF files under 5MB are allowed.");
+      toast.error("Only PDF files under 50 MB are allowed.");
     }
 
     setFiles(validFiles);
@@ -87,7 +86,7 @@ export default function ChatWithFiles() {
         name: file.name,
         type: file.type,
         data: await encodeFileAsBase64(file),
-      })),
+      }))
     );
     submit({ files: encodedFiles });
     const generatedTitle = await generateQuizTitle(encodedFiles[0].name);
@@ -99,9 +98,9 @@ export default function ChatWithFiles() {
     setQuestions([]);
   };
 
-  const progress = partialQuestions ? (partialQuestions.length / 4) * 100 : 0;
+  const progress = partialQuestions ? (partialQuestions.length / 20) * 100 : 0;
 
-  if (questions.length === 4) {
+  if (questions.length === 20) {
     return (
       <Quiz title={title ?? "Quiz"} questions={questions} clearPDF={clearPDF} />
     );
@@ -156,14 +155,6 @@ export default function ChatWithFiles() {
             <CardTitle className="text-2xl font-bold">
               PDF Quiz Generator
             </CardTitle>
-            <CardDescription className="text-base">
-              Upload a PDF to generate an interactive quiz based on its content
-              using the <Link href="https://sdk.vercel.ai">AI SDK</Link> and{" "}
-              <Link href="https://sdk.vercel.ai/providers/ai-sdk-providers/google-generative-ai">
-                Google&apos;s Gemini Pro
-              </Link>
-              .
-            </CardDescription>
           </div>
         </CardHeader>
         <CardContent>
@@ -196,7 +187,7 @@ export default function ChatWithFiles() {
               {isLoading ? (
                 <span className="flex items-center space-x-2">
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  <span>Generating Quiz...</span>
+                  <span>CrackGPT is generating quiz...</span>
                 </span>
               ) : (
                 "Generate Quiz"
@@ -217,12 +208,12 @@ export default function ChatWithFiles() {
               <div className="grid grid-cols-6 sm:grid-cols-4 items-center space-x-2 text-sm">
                 <div
                   className={`h-2 w-2 rounded-full ${
-                    isLoading ? "bg-yellow-500/50 animate-pulse" : "bg-muted"
+                    isLoading ? "bg-green-500/50 animate-pulse" : "bg-muted"
                   }`}
                 />
                 <span className="text-muted-foreground text-center col-span-4 sm:col-span-2">
                   {partialQuestions
-                    ? `Generating question ${partialQuestions.length + 1} of 4`
+                    ? `Generating question ${partialQuestions.length + 1} of 20`
                     : "Analyzing PDF content"}
                 </span>
               </div>
@@ -231,27 +222,11 @@ export default function ChatWithFiles() {
         )}
       </Card>
       <motion.div
-        className="flex flex-row gap-4 items-center justify-between fixed bottom-6 text-xs "
+        className="flex flex-row gap-4 items-center justify-between fixed bottom-6 text-xs font-extrabold "
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <NextLink
-          target="_blank"
-          href="https://github.com/vercel-labs/ai-sdk-preview-pdf-support"
-          className="flex flex-row gap-2 items-center border px-2 py-1.5 rounded-md hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-800"
-        >
-          <GitIcon />
-          View Source Code
-        </NextLink>
-
-        <NextLink
-          target="_blank"
-          href="https://vercel.com/templates/next.js/ai-quiz-generator"
-          className="flex flex-row gap-2 items-center bg-zinc-900 px-2 py-1.5 rounded-md text-zinc-50 hover:bg-zinc-950 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-50"
-        >
-          <VercelIcon size={14} />
-          Deploy with Vercel
-        </NextLink>
+        Powered by CrackGPT
       </motion.div>
     </div>
   );

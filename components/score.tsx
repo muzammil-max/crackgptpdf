@@ -11,8 +11,8 @@ export default function QuizScore({ correctAnswers, totalQuestions }: QuizScoreP
   const roundedScore = Math.round(score)
 
   const getMessage = () => {
-    if (score === 100) return "Perfect score! Congratulations!"
-    if (score >= 80) return "Great job! You did excellently!"
+    if (score === 100) return "Nice score!"
+    if (score >= 80) return "Good job!"
     if (score >= 60) return "Good effort! You're on the right track."
     if (score >= 40) return "Not bad, but there's room for improvement."
     return "Keep practicing, you'll get better!"

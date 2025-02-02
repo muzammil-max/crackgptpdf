@@ -1,41 +1,54 @@
-# AI SDK PDF Support Example
+CrackGPT Quizzer - AI-Powered Quiz Generator
 
-This example demonstrates how to use the [AI SDK](https://sdk.vercel.ai/docs) with [Next.js](https://nextjs.org/) with the `useObject` hook to submit PDF messages to the AI provider of your choice (Google or Anthropic).
+🚀 About CrackGPT
 
-## Deploy your own
+CrackGPT Quizzer student, teacher, or self-learner, CrackGPT helps streamline the process of creating quizzes to test and reinforce knowledge.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-sdk-preview-pdf-support&env=GOOGLE_API_KEY&envDescription=API%20keys%20needed%20for%20application&envLink=google.com)
+🏢 Created by Crack Labs
 
-## How to use
+CrackGPT is an experimental project developed by Crack Labs. Our focus is to leverage artificial intelligence to make learning more efficient, engaging, and accessible to everyone.
 
-Run [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+🎯 Our Mission
 
-```bash
-npx create-next-app --example https://github.com/vercel-labs/ai-sdk-preview-pdf-support ai-sdk-preview-pdf-support-example
-```
+The primary goal of CrackGPT is to produce highly accurate MCQs specifically tailored for A-Level subjects. Our AI ensures that the questions generated align with the syllabus, making it an essential study tool for students.
 
-```bash
-yarn create next-app --example https://github.com/vercel-labs/ai-sdk-preview-pdf-support ai-sdk-preview-pdf-support-example
-```
+🌟 Features
 
-```bash
-pnpm create next-app --example https://github.com/vercel-labs/ai-sdk-preview-pdf-support ai-sdk-preview-pdf-support-example
-```
+📄 AI-powered quiz generation from any PDF document.
 
-To run the example locally you need to:
+🎯 Accurate and syllabus-aligned MCQs focused on A-Level subjects.
 
-1. Sign up for accounts with the AI providers you want to use (e.g., Google).
-2. Obtain API keys for Google provider.
-3. Set the required environment variables as shown in the `.env.example` file, but in a new file called `.env`.
-4. `npm install` to install the required dependencies.
-5. `npm run dev` to launch the development server.
+📝 Instant quiz creation to save time and effort.
+
+📊 Performance tracking to help students assess their progress.
+
+🌍 Accessible anytime, anywhere through a user-friendly interface.
+
+🔬 Experimental & Evolving
+
+As CrackGPT is an experimental project, we continuously improve our AI to enhance accuracy, user experience, and performance. Your feedback helps us refine the tool to better serve learners worldwide.
+
+🔗 Get Started
+
+Upload your PDF document.
+
+Let CrackGPT analyze and generate MCQs.
+
+Review, edit, and export your quiz for study or sharing.
+
+Test yourself and track your progress!
+
+🤝 Contribute & Support
+
+We appreciate feedback, suggestions, and contributions from our community. Join us in making AI-powered education more effective!
+
+📩 Contact Us: support@cracklabs.ai
+
+🌍 Website: [Coming Soon]
+
+📢 Follow Us for Updates:
 
 
-## Learn More
+Discord: Join our community
 
-To learn more about Vercel AI SDK or Next.js take a look at the following resources:
-
-- [AI SDK docs](https://sdk.vercel.ai/docs)
-- [Vercel AI Playground](https://play.vercel.ai)
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-
+⚠ Disclaimer: CrackGPT Exp is in its experimental phase and may not always generate perfect questions. Always review the MCQs for accuracy before using them for study or examination preparation.
