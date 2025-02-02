@@ -42,9 +42,6 @@ Test yourself and track your progress!
 
 We appreciate feedback, suggestions, and contributions from our community. Join us in making AI-powered education more effective!
 
-📩 Contact Us: support@cracklabs.ai
-
-🌍 Website: [Coming Soon]
 
 📢 Follow Us for Updates:
 
